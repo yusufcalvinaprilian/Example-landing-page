@@ -1,0 +1,731 @@
+/* Reset CSS */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+body {
+	font-family: "Poppins", sans-serif;
+}
+
+nav {
+	background-color: #2c7865;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+	color: #fff;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 25px 45px;
+}
+
+/* Efek animasi navbar saat digulir ke bawah */
+nav.scrolled {
+	background-color: rgba(255, 255, 255, 0.9);
+	transition: background-color 0.3s ease;
+}
+
+nav.scrolled .brand {
+	color: #333;
+	transition: color 0.3s ease;
+}
+
+nav.scrolled .brand,
+nav.scrolled .navbar-links li a {
+	color: #333;
+	transition: color 0.3s ease;
+}
+
+.container {
+	padding-top: 120px; /* Sesuaikan dengan tinggi navbar Anda */
+}
+
+.navbar-header {
+	display: flex;
+	align-items: center;
+}
+
+.brand {
+	color: #fff;
+	text-decoration: none;
+	font-size: 20px;
+	margin-right: 20px;
+}
+
+.navbar-links {
+	display: flex;
+	list-style: none;
+}
+
+.navbar-links li {
+	margin-right: 25px;
+}
+
+.navbar-links li a {
+	color: #fff;
+	text-decoration: none;
+	transition: color 0.3s ease;
+	position: relative;
+}
+
+.navbar-links li a:hover {
+	color: #23ce23; /* Warna hijau saat hover */
+}
+
+.navbar-links li:first-child a {
+	color: #23ce23; /* Warna hijau */
+}
+
+/* Styling untuk underline di bawah tautan navigasi */
+.navbar-links li a::after {
+	content: "";
+	position: absolute;
+	width: 0%;
+	height: 2px;
+	background-color: #23ce23; /* Warna underline */
+	bottom: -5px; /* Jarak 5px dari bawah teks */
+	left: 50%;
+	transition: width 0.3s ease; /* Transisi lebar */
+	/* border-radius: 50%; Membuat border bulat */
+	transform: translateX(-50%); /* Pusatkan border */
+}
+
+/* Menampilkan border pada tautan navigasi pertama */
+.navbar-links li:first-child a::after {
+	width: 100%; /* Lebar 100% untuk tautan "Home" */
+}
+
+/* Saat dihover, tampilkan border */
+.navbar-links li a:hover::after {
+	width: calc(100% + 10px); /* Tambahkan 10px ke lebar */
+}
+
+/* Ketika tautan navigasi pertama dihover (Home), tampilkan border */
+.navbar-links li:first-child a:hover::after {
+	width: calc(100% + 10px); /* Tambahkan 10px ke lebar */
+}
+
+/* Styling untuk tombol "Shop Now" */
+.shop-button {
+	display: inline-block;
+	padding: 10px 20px;
+	margin-top: 30px;
+	background-color: #006400;
+	/*Warnahijau*/
+	color: #fff;
+	text-decoration: none;
+	border-radius: 10px;
+	transition: background-color 0.3s ease;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	-webkit-transition: background-color 0.3s ease;
+	-moz-transition: background-color 0.3s ease;
+	-ms-transition: background-color 0.3s ease;
+	-o-transition: background-color 0.3s ease;
+}
+
+/* Efek hover untuk tombol "Shop Now" */
+.shop-button:hover {
+	background-color: #23ce23; /* Warna hijau gelap saat hover */
+}
+
+/* Styling untuk section home */
+.home-section {
+	background-color: #f9f9f9; /* Warna latar belakang */
+	padding: 50px 20px; /* Padding atas dan bawah 50px, kiri dan kanan 20px */
+}
+
+.home-section h1,
+h5 {
+	color: #006400;
+	padding-bottom: 5px;
+}
+
+.home-section p {
+	padding: 10px 0;
+}
+
+/* Mengatur tata letak dan lebar konten */
+.container {
+	max-width: 1200px; /* Lebar maksimum konten */
+	margin: 0 auto; /* Pusatkan konten */
+}
+
+/* Tata letak konten */
+.content {
+	display: flex;
+	align-items: center;
+}
+
+/* Tata letak teks */
+.text {
+	flex: 1;
+}
+
+/* Styling untuk judul teks */
+.text h2 {
+	margin-bottom: 20px; /* Jarak bawah 20px */
+}
+
+/* Tata letak gambar */
+.image {
+	flex: 1;
+	text-align: center;
+}
+
+/* Styling untuk gambar */
+.image img {
+	max-width: 100%; /* Lebar maksimum gambar */
+	height: auto; /* Biarkan tinggi gambar mengikuti proporsi aslinya */
+}
+
+/* Styling untuk section product */
+.product-section {
+	background-color: #f9f9f9; /* Warna latar belakang */
+	padding: 50px 0; /* Padding atas dan bawah 50px */
+}
+
+/* .product-section .container h2 {
+	margin: 13px 0;
+} */
+
+/* Animasi saat cursor hover pada card */
+.product-card:hover {
+	transform: translateY(-5px); /* Menggeser card ke atas */
+	transition: transform 0.3s ease; /* Efek transisi berlangsung selama 0.3 detik */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambah bayangan pada card */
+}
+
+/* Mengembalikan keadaan normal saat cursor tidak lagi hover pada card */
+.product-card:not(:hover) {
+	transform: translateY(0);
+	transition: transform 0.3s ease;
+	box-shadow: none;
+}
+
+/* Tata letak dan lebar konten */
+.container {
+	max-width: 1200px; /* Lebar maksimum konten */
+	margin: 0 auto; /* Pusatkan konten */
+}
+
+/* Tata letak grid produk */
+.product-grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+/* Styling untuk card produk */
+.product-card {
+	width: calc(25% - 20px); /* Lebar 25% minus margin */
+	margin: 10px; /* Jarak antara card */
+	border-radius: 15px; /* Sudut tumpul melengkung */
+	overflow: hidden;
+}
+
+/* Styling untuk gambar produk */
+.product-image img {
+	width: 100%;
+	height: auto;
+	border-top-left-radius: 15px; /* Membuat sudut tumpul pada sisi atas */
+	border-top-right-radius: 15px; /* Membuat sudut tumpul pada sisi atas */
+	width: 100%; /* Lebar gambar 100% dari area parent */
+	height: 100%; /* Tinggi gambar 100% dari area parent */
+	object-fit: cover; /* Memastikan gambar menutupi seluruh area dengan menjaga aspek rasio */
+	border-top-left-radius: 15px; /* Membuat sudut tumpul pada sisi atas */
+	border-top-right-radius: 15px; /* Membuat sudut tumpul pada sisi atas */
+}
+
+/* Styling untuk deskripsi produk */
+.description {
+	background-color: rgba(0, 0, 0, 0.7); /* Warna background gelap */
+	color: #fff; /* Warna teks */
+	padding: 10px; /* Padding dalam */
+}
+
+/* Responsif untuk perangkat mobile */
+@media screen and (max-width: 768px) {
+	.product-card {
+		width: calc(50% - 20px); /* Lebar 50% minus margin */
+	}
+}
+
+/* Styling untuk bagian blog */
+.blog-section {
+	background-color: #fff;
+	padding: 50px 0;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.blog-section .container h2 {
+	margin-bottom: 80px;
+}
+
+/* Animasi saat cursor hover pada card testimoni */
+.testimonial-card:hover {
+	transform: scale(1.05); /* Memperbesar card */
+	transition: transform 0.3s ease; /* Efek transisi berlangsung selama 0.3 detik */
+}
+
+/* Mengembalikan keadaan normal saat cursor tidak lagi hover pada card testimoni */
+.testimonial-card:not(:hover) {
+	transform: scale(1);
+	transition: transform 0.3s ease;
+}
+
+/* Tata letak dan lebar konten */
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+/* Judul bagian */
+.blog-section h2 {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+/* Tata letak grid testimoni */
+.testimonials {
+	display: flex;
+	justify-content: space-around;
+}
+
+/* Styling untuk card testimoni */
+.testimonial-card {
+	width: 45%;
+	padding: 20px;
+	border: 1px solid #ddd; /* Border dengan warna abu-abu */
+	border-radius: 10px; /* Sudut bulat */
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow */
+	margin-bottom: 40px;
+}
+
+/* Styling untuk gambar testimoni */
+.testimonial-image {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.testimonial-image img {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%; /* Frame bulat */
+}
+
+/* Styling untuk konten testimoni */
+.testimonial-content {
+	text-align: center;
+}
+
+.testimonial-content p {
+	margin-bottom: 10px;
+}
+
+.testimonial-content span {
+	font-style: italic;
+}
+
+/* Styling untuk section about */
+.about-section {
+	background-color: #f5f5f5;
+	padding: 50px 0;
+}
+
+/* Tata letak dan lebar konten */
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+/* Styling untuk konten about */
+.about-content {
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.about-content h2 {
+	font-size: 36px;
+	color: #333;
+	margin-bottom: 40px;
+}
+
+.about-content p {
+	font-size: 18px;
+	line-height: 1.6;
+	color: #666;
+	margin-bottom: 40px;
+}
+
+/* Styling untuk testimonial */
+.testimonial {
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial p {
+	font-style: italic;
+	color: #444;
+}
+
+.testimonial span {
+	font-weight: bold;
+	color: #555;
+}
+
+/* Styling untuk section contact */
+.contact-section {
+	background-color: #f9f9f9;
+	padding: 100px 0;
+}
+
+/* Tata letak dan lebar konten */
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+/* Styling untuk konten contact */
+.contact-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.contact-info {
+	flex: 0 0 48%;
+}
+
+.contact-info h2 {
+	font-size: 36px;
+	color: #333;
+}
+
+.contact-info p {
+	font-size: 18px;
+	color: #666;
+	margin-bottom: 30px;
+}
+
+.contact-info ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.contact-info ul li {
+	font-size: 16px;
+	color: #555;
+	margin-bottom: 10px;
+}
+
+.social-icons {
+	padding: 20px; /* Atur ruang dalam */
+	text-align: center; /* Atur teks agar berada di tengah */
+}
+
+.social-icons-container {
+	display: flex; /* Gunakan Flexbox */
+	justify-content: center; /* Pusatkan ikon-ikon horizontal */
+}
+
+.social-icons a {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background-color: #000000;
+	color: #fff;
+	font-size: 20px;
+	line-height: 30px;
+	text-align: center;
+	margin-right: 10px;
+	border-radius: 50%;
+	transition: background-color 0.3s ease;
+	margin: 0 10px; /* Berikan jarak antara ikon-ikon */
+	color: #fff; /* Warna ikon */
+	font-size: 20px; /* Ukuran ikon */
+	padding-bottom: 20px;
+}
+
+.social-icons a:hover {
+	background-color: #23ce23;
+}
+
+/* Styling untuk formulir */
+.contact-form {
+	flex: 0 0 48%;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+	width: 100%;
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+
+.contact-form textarea {
+	height: 150px;
+}
+
+.contact-form button {
+	background-color: #006400;
+	color: #fff;
+	border: none;
+	padding: 15px 30px;
+	border-radius: 15px;
+	cursor: pointer;
+	font-size: 16px;
+	transition: background-color 0.3s ease;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-ms-border-radius: 15px;
+	-o-border-radius: 15px;
+}
+
+.contact-form button:hover {
+	background-color: #23ce23;
+}
+
+/* Styling untuk section footer */
+.footer-section {
+	background-color: #2c7865;
+	color: #fff;
+	padding: 12px 0;
+}
+
+/* Tata letak dan lebar konten */
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+/* Styling untuk konten footer */
+.footer-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.footer-info h3,
+.footer-links h3 {
+	font-size: 24px;
+	margin-bottom: 20px;
+}
+
+.footer-info p {
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+
+.footer-info ul,
+.footer-links ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.footer-info ul li,
+.footer-links ul li {
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+	color: #fff;
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+	color: #23ce23;
+}
+
+/* Untuk layar kecil (handphone), maksimal lebar 767px */
+@media only screen and (max-width: 767px) {
+	/* Mengatur lebar navbar agar responsif */
+	nav {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	nav .navbar-links {
+		padding-top: 20px;
+	}
+
+	/* Mengatur tata letak konten pada bagian home */
+	.home-section .content {
+		flex-direction: column-reverse;
+		align-items: center;
+		text-align: center;
+	}
+
+	/* Mengatur ukuran font pada bagian home agar sesuai dengan layar kecil */
+	.home-section .content .text h5 {
+		font-size: 24px;
+		padding-top: 20px;
+	}
+
+	.home-section .content .text h1 {
+		font-size: 36px;
+	}
+
+	/* Mengatur ukuran font pada bagian produk */
+	.product-section .container h2 {
+		font-size: 24px;
+	}
+
+	/* Mengatur lebar kartu produk pada layar kecil */
+	.product-card {
+		width: 90%;
+		margin: 10px auto;
+	}
+
+	/* Mengatur tata letak testimoni pada layar kecil */
+	.blog-section .testimonials {
+		flex-direction: column;
+	}
+
+	/* Mengatur ukuran font pada testimonial pada layar kecil */
+	.testimonial-card .testimonial-content p {
+		font-size: 16px;
+	}
+
+	.testimonial-card .testimonial-content span {
+		font-size: 14px;
+	}
+
+	/* Mengatur tata letak konten pada bagian about */
+	.about-section .about-content {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	/* Mengatur ukuran font pada bagian about */
+	.about-section .about-content h2 {
+		font-size: 24px;
+	}
+
+	.about-section .about-content p {
+		font-size: 16px;
+	}
+
+	/* Mengatur tata letak konten pada bagian kontak */
+	.contact-section .contact-content {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	/* Mengatur ukuran font pada bagian kontak */
+	.contact-section .contact-content h2 {
+		font-size: 24px;
+	}
+
+	.contact-section .contact-content p {
+		font-size: 16px;
+	}
+
+	.contact-section .contact-content ul li {
+		font-size: 16px;
+	}
+
+	/* Mengatur lebar formulir kontak pada layar kecil */
+	.contact-section .contact-form form {
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	/* Mengatur ukuran font pada footer */
+	.footer-section .footer-content h3 {
+		font-size: 24px;
+	}
+
+	.footer-section .footer-content p {
+		font-size: 16px;
+	}
+
+	.footer-section .footer-content ul li {
+		font-size: 16px;
+	}
+
+	/* Adjust section title alignment for small screens */
+	.section-title {
+		text-align: center;
+		padding-bottom: 30px;
+	}
+
+	/* Decrease card size for small screens */
+	.product-card {
+		/* Existing styles for product card */
+	}
+
+	/* New styles for small cards */
+	.small-card {
+		width: 80%; /* Adjust card width */
+		margin: 0 auto 20px; /* Center card horizontally and add some bottom margin */
+	}
+
+	/* Adjust section title alignment for small screens */
+	.section-title {
+		text-align: center;
+	}
+
+	/* Center testimonial cards for small screens */
+	.testimonial-card {
+		width: 80%; /* Adjust card width */
+		margin: 0 auto 20px; /* Center card horizontally and add some bottom margin */
+	}
+
+	/* Adjust section title alignment for small screens */
+	.section-title {
+		text-align: center;
+	}
+
+	/* Center text content and provide appropriate margins for small screens */
+	.text-content {
+		padding: 0 20px; /* Jarak samping kanan dan kiri */
+		text-align: justify; /* Penjajaran teks ke kiri dan kanan */
+	}
+
+	/* Add padding/margin to the contact form for small screens */
+	.contact-form {
+		padding: 20px 0; /* Jarak samping kanan dan kiri */
+	}
+
+	.contact-section {
+		padding-bottom: 20px;
+	}
+
+	.contact-info ul {
+		padding: 0 10px;
+	}
+
+	.footer-section {
+		padding-right: 20px; /* Ubah padding atas */
+		padding-left: 20px; /* Ubah padding atas */
+		padding-bottom: 20px; /* Ubah padding bawah jika diperlukan */
+		text-align: justify;
+		text-align: center;
+	}
+
+	.footer-links {
+		display: none;
+	}
+}
